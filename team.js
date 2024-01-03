@@ -10,7 +10,7 @@ favoriteVideoGame : "fifa",
 favoriteFilm : "Lion King",
 favoriteBook : "Rich dad Poor dad",
 petName : "Tjay"
-}
+},
 
 ];
 
