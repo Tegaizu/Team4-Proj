@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 let arr = [
 {
 name : "Oghenetega",
@@ -25,6 +24,21 @@ petName : "Tjay"
   favoriteBook: "Berserk",
   petName: "Micio"
 },
+
+ {
+
+name: "Giovanni",
+surname: "Ranauro",
+age: 25,
+city: "Benevento",
+hobby: "Music",
+favoriteFood: "Pizza",
+favoriteVideoGame: "MW3",
+favoriteFilm: "HarryPotter",
+favoriteBook: "Cacciatorediaquiloni",
+petName: "Lilli"
+
+    },
 
 ];
 
@@ -82,3 +96,15 @@ function printPeopleWithPets(arr) {
 
   printPeopleWithPets(arr);
   printPeopleWithFavoriteGame(arr);
+
+
+  function ageOrder(arr) {
+    const sortedUsers = arr.sort((a, b) => a.age - b.age);
+    
+    sortedUsers.forEach(user => {
+      console.log(`${user.name} Age: ${user.age}`);
+    });
+  }
+  
+  ageOrder(arr);
+
