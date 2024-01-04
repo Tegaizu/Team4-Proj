@@ -12,7 +12,6 @@ let arr = [{
 },]
 
 
-peopleArray.push(arr);
 
 
 console.log(arr);
