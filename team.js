@@ -1,4 +1,4 @@
-let anotherPerson = {
+let arr = [{
   name: "Riccardo",
   surname: "Sideri",
   age: 24,
@@ -9,19 +9,19 @@ let anotherPerson = {
   favoriteFilm: "IoSonoLeggenda",
   favoriteBook: "Berserk",
   petName: "Micio"
-};
+},]
 
 
-peopleArray.push(anotherPerson);
+peopleArray.push(arr);
 
 
-console.log(peopleArray);
+console.log(arr);
 
 
 
-function printPeopleWithPets(peopleArray) {
+function printPeopleWithPets(arr) {
     console.log("People with pets:");
-    for (let person of peopleArray) {
+    for (let person of arr) {
       if (person.petName) {
         console.log(`${person.name} has a pet named ${person.petName}`);
       }
@@ -29,9 +29,9 @@ function printPeopleWithPets(peopleArray) {
   }
   
   
-  function printPeopleWithFavoriteGame(peopleArray) {
+  function printPeopleWithFavoriteGame(arr) {
     console.log("People with 'LOL' or 'League Of Legends' as favorite video game:");
-    for (let person of peopleArray) {
+    for (let person of arr) {
       const favoriteGame = person.favoriteVideoGame.toLowerCase();
       if (favoriteGame === 'lol' || favoriteGame === 'league of legends') {
         console.log(`${person.name} likes 'LOL' or 'League Of Legends'`);
@@ -40,6 +40,6 @@ function printPeopleWithPets(peopleArray) {
   }
   
 
-  printPeopleWithPets(peopleArray);
-  printPeopleWithFavoriteGame(peopleArray);
+  printPeopleWithPets(arr);
+  printPeopleWithFavoriteGame(arr);
   
