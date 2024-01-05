@@ -9,7 +9,7 @@ favoriteFood : "Carbonara",
 favoriteVideoGame : "fifa",
 favoriteFilm : "Lion King",
 favoriteBook : "Rich dad Poor dad",
-petName : "Tjay"
+petName : ""
 },
 
 {
@@ -38,7 +38,20 @@ favoriteFilm: "HarryPotter",
 favoriteBook: "Cacciatorediaquiloni",
 petName: "Lilli"
 
-    },
+},
+
+ {
+name : "Silvia",
+surname : "Iannini",
+age : 23,
+city : "Velletri",
+ hobby : "reading",
+favoriteFood : "pasta",
+favoriteFilm : " ",
+favoriteBook : "cime tempestose",
+petName : "Bonnie"
+
+}
 
 ];
 
@@ -65,12 +78,6 @@ function sameName(arr){
     }
 
 
-console.log(alphaOrder(arr))
-console.log(`Nomi in comune: ${sameName(arr)}`)
-
-
-console.log(arr);
-
 
 
 function printPeopleWithPets(arr) {
@@ -85,6 +92,7 @@ function printPeopleWithPets(arr) {
   
   function printPeopleWithFavoriteGame(arr) {
     console.log("People with 'LOL' or 'League Of Legends' as favorite video game:");
+
     for (let person of arr) {
       const favoriteGame = person.favoriteVideoGame.toLowerCase();
       if (favoriteGame === 'lol' || favoriteGame === 'league of legends') {
@@ -92,10 +100,7 @@ function printPeopleWithPets(arr) {
       }
     }
   }
-  
-
-  printPeopleWithPets(arr);
-  printPeopleWithFavoriteGame(arr);
+ 
 
 
   function ageOrder(arr) {
@@ -105,6 +110,19 @@ function printPeopleWithPets(arr) {
       console.log(`${user.name} Age: ${user.age}`);
     });
   }
-  
+ 
+
+  function middleAge (arr){
+    return arr.reduce((acc, arr)=>acc + arr.age, 0) /arr.length
+  }
+
+
+  console.log(arr);
+  console.log(alphaOrder(arr))
   ageOrder(arr);
+  console.log(`Nomi in comune: ${sameName(arr)}`)
+  printPeopleWithPets(arr)
+  printPeopleWithFavoriteGame(arr)
+  console.log(middleAge(arr))
+
 
