@@ -1,4 +1,4 @@
-let arr = [{
+const arr = [{
   name: "Riccardo",
   surname: "Sideri",
   age: 24,
@@ -9,37 +9,29 @@ let arr = [{
   favoriteFilm: "IoSonoLeggenda",
   favoriteBook: "Berserk",
   petName: "Micio"
-},]
-
-
-peopleArray.push(arr);
-
+}];
 
 console.log(arr);
 
-
-
-function printPeopleWithPets(arr) {
-    console.log("People with pets:");
-    for (let person of arr) {
-      if (person.petName) {
-        console.log(`${person.name} has a pet named ${person.petName}`);
-      }
-    }
+const printPeopleWithPets = (arr) => {
+  console.log("People with pets:");
+  const personWithPet = arr.find(person => person.petName);
+  if (personWithPet) {
+    console.log(`${personWithPet.name} has a pet named ${personWithPet.petName}`);
   }
-  
-  
-  function printPeopleWithFavoriteGame(arr) {
-    console.log("People with 'LOL' or 'League Of Legends' as favorite video game:");
-    for (let person of arr) {
-      const favoriteGame = person.favoriteVideoGame.toLowerCase();
-      if (favoriteGame === 'lol' || favoriteGame === 'league of legends') {
-        console.log(`${person.name} likes 'LOL' or 'League Of Legends'`);
-      }
-    }
-  }
-  
+};
 
-  printPeopleWithPets(arr);
-  printPeopleWithFavoriteGame(arr);
-  
+const printPeopleWithFavoriteGame = (arr) => {
+  console.log("People with 'LOL' or 'League Of Legends' as favorite video game:");
+  const personWithFavoriteGame = arr.find(person => {
+    const favoriteGame = person.favoriteVideoGame.toLowerCase();
+    return favoriteGame === 'lol' || favoriteGame === 'league of legends';
+  });
+
+  if (personWithFavoriteGame) {
+    console.log(`${personWithFavoriteGame.name} likes 'LOL' or 'League Of Legends'`);
+  }
+};
+
+printPeopleWithPets(arr);
+printPeopleWithFavoriteGame(arr);
