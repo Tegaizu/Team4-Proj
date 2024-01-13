@@ -80,5 +80,3 @@ printPeopleWithFavoriteGame(peopleArr);
 console.log(`The middle age is: ${middleAge(peopleArr)}`);
 
 
-
-
