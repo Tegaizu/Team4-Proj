@@ -53,30 +53,33 @@ console.log(peopleArr);
 
 const printPeopleWithPets = (arr) => {
   console.log("People with pets:");
-  arr.filter(person => person.petName)
-    .forEach(person => console.log(`${person.name} has a pet named ${person.petName}`));
+  let petOwners = arr.filter(person => person.petName)
+    .map(person => `${person.name} has a pet named ${person.petName}`);
+    return petOwners
 };
 
 const printPeopleWithFavoriteGame = (arr) => {
   console.log("People with 'LOL' or 'League Of Legends' as favorite video game:");
-  arr.filter(person => person.favoriteVideoGame.toLowerCase() === 'lol' || person.favoriteVideoGame.toLowerCase() === 'leagueoflegends')
-    .forEach(person => console.log(`${person.name} likes 'LOL' or 'League Of Legends'`));
+ let gamers = arr.filter(person => person.favoriteVideoGame.toLowerCase() === 'lol' || person.favoriteVideoGame.toLowerCase() === 'leagueoflegends')
+    .map(person => `${person.name} likes 'LOL' or 'League Of Legends'`);
+    return gamers
 };
 
-const alphaOrder = (arr) => arr.map(user => `${user.surname} ${user.name}`).sort();
+ const alphaOrder = (arr) => arr.sort((a, b) => a.surname > b.surname ? 1 : -1)
+.map(user => `${user.surname} ${user.name}`);
+
 
 const ageOrder = (arr) => {
   const sortedUsers = [...arr].sort((a, b) => a.age - b.age);
-  sortedUsers.forEach(user => console.log(`${user.name} Age: ${user.age}`));
+ return sortedUsers.map(user => `${user.name} Age: ${user.age}`);
 };
 
 const middleAge = (arr) => arr.reduce((acc, user) => acc + user.age, 0) / arr.length;
 
 console.log(peopleArr);
 console.log(alphaOrder(peopleArr));
-ageOrder(peopleArr);
-printPeopleWithPets(peopleArr);
-printPeopleWithFavoriteGame(peopleArr);
+console.log(ageOrder(peopleArr));
+console.log(printPeopleWithPets(peopleArr));
+console.log(printPeopleWithFavoriteGame(peopleArr));
 console.log(`The middle age is: ${middleAge(peopleArr)}`);
-
 
