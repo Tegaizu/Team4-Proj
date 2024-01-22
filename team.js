@@ -49,7 +49,6 @@ const peopleArr = [
   }
 ];
 
-console.log(peopleArr);
 
 const printPeopleWithPets = (arr) => {
   console.log("People with pets:");
